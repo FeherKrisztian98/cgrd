@@ -5,7 +5,8 @@ services:
       dockerfile: Dockerfile
     container_name: php8
     volumes:
-      - .:/var/www/html   
+      - .:/var/www/html
+      - ./apache:/etc/apache2/sites-available
     ports:
       - "8080:80"
     networks:
@@ -15,7 +16,7 @@ services:
       DB_NAME: ${DB_DATABASE}
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}
-
+      XDEBUG_ENABLED: ${XDEBUG_ENABLED}
   db:
     image: mysql:8.0
     container_name: mysql8
@@ -28,14 +29,11 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - db_data:/var/lib/mysql
+      - ./mysql/db_data:/var/lib/mysql
     networks:
       - app
 
 networks:
   app:
     driver: bridge
-
-volumes:
-  db_data:
 
