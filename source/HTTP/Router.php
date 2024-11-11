@@ -37,6 +37,24 @@ final class Router
     {
         $router = new self();
 
+        $router->addGlobalMiddleware(new CsrfMiddleware());
+
+        $authMiddleware = new AuthMiddleware();
+
+        // Guest routes
+        $router->addRoute('GET', '', [AppController::class, 'index']);
+        $router->addRoute('GET', '/404', [AppController::class, 'notFound']);
+        $router->addRoute('GET', '/login', [AuthController::class, 'login']);
+        $router->addRoute('GET', '/logout', [AuthController::class, 'logout']);
+        $router->addRoute('POST', '/auth', [AuthController::class, 'auth']);
+
+        // Admin routes
+        $router->addRoute('GET', '/news', [NewsController::class, 'listNews'])->addMiddleware($authMiddleware);
+        $router->addRoute('POST', '/news/create', [NewsController::class, 'createNews'])->addMiddleware($authMiddleware);
+        $router->addRoute('GET', '/news/modify/{id}', [NewsController::class, 'modifyNews'])->addMiddleware($authMiddleware);
+        $router->addRoute('PUT', '/news/modify/{id}', [NewsController::class, 'updateNews'])->addMiddleware($authMiddleware);
+        $router->addRoute('DELETE', '/news/delete/{id}', [NewsController::class, 'deleteNews'])->addMiddleware($authMiddleware);
+
         return $router;
     }
 
