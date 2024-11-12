@@ -24,6 +24,10 @@ class Log
             $hasErrored = true;
         }
 
+        $dirName = dirname(self::LOG_PATH);
+        if (!is_dir($dirName) && !mkdir($dirName, 0755, true) && !is_dir($dirName)) {
+            throw new \RuntimeException('Cannot create log directory');
+        }
         // Ensure the log file is writable, and create it if it doesn't exist
         if (!file_exists(self::LOG_PATH) && !touch(self::LOG_PATH)) {
             throw new \RuntimeException('Cannot create log file');

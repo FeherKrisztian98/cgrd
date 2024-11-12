@@ -2,3 +2,4 @@
 .idea/
 mysql/db_data/
 vendor/
+log/errorLog.log

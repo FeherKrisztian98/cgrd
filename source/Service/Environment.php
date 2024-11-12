@@ -57,7 +57,11 @@ class Environment
      */
     public static function handleException(Throwable $exception): void
     {
-        Log::log($exception->getMessage());
+        $message = $exception->__toString();
+        if (self::isDevelopment()) {
+            echo $message;
+        }
+        Log::log($message);
     }
 
     /**
