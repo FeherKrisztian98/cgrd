@@ -27,7 +27,7 @@ class AuthController extends AbstractController
 
         $this->response->setNotification('Wrong Login Data', NotificationType::ERROR);
 
-        return $this->response->redirect('/login');
+        return $this->response->redirect('/login')->setHttpCode(401);
     }
 
     /**
