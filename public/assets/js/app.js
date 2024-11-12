@@ -46,10 +46,11 @@ document.body.addEventListener('click', (event) => {
 
     // Handle form submissions if `data-serialize-form` is present
     if (target.dataset.serializeForm) {
+        const formData = new FormData(target.closest('form'));
         if (target.dataset.method === 'PUT') {
-            return router.put(target.dataset.route, new FormData(target.closest('form')));
+            return router.put(target.dataset.route, formData);
         }
-        return router.post(target.dataset.route, new FormData(target.closest('form')));
+        return router.post(target.dataset.route, formData);
     }
 
     // Handle DELETE request
