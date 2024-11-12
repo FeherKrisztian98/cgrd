@@ -1,0 +1,12 @@
+<form onsubmit="return false;">
+    <input type="text" name="title" value="{{ title }}">
+    <textarea name="content" cols="30" rows="10">{{ content }}</textarea>
+
+
+    {% if id is empty %}
+    <button type="button" class="btn btn-primary" data-serialize-form="true" data-route="/news/create">Create</button>
+    {% else %}
+        <button type="button" class="btn btn-primary" data-method="PUT" data-serialize-form="true" data-route="/news/modify/{{ id }}">Save</button>
+    {% endif %}
+    <button type="button" class="btn btn-primary" data-route="logout">Logout</button>
+</form>

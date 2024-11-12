@@ -1,0 +1,15 @@
+<form>
+    {% include 'notificationContainer.twig' %}
+
+    <label for="input-username" class="visually-hidden">
+        Username
+    </label>
+    <input type="text" id="input-username" name="username" placeholder="Username">
+
+    <label for="input-password" class="visually-hidden">
+        Password
+    </label>
+    <input type="password" id="input-password" name="password" placeholder="Password">
+
+    <button class="btn btn-primary" data-route="auth" data-serialize-form="true" type="button">Login</button>
+</form>

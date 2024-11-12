@@ -1,0 +1,26 @@
+{% if news %}
+    <div class="news">
+        <h2>
+            All News
+        </h2>
+        {% for newsEntry in news %}
+            <div class="flex flex--center news-row news-edit">
+                <div class="flex news-row-item">
+                    <div class="news-row-title">{{ newsEntry.title }}</div>
+                    <div class="news-row-content">{{ newsEntry.content }}</div>
+                </div>
+
+
+                <div class="news-row-buttons">
+                    <span data-route="/news/modify/{{ newsEntry.id }}">
+                        <img class="btn btn-icon" src="/assets/images/pencil.svg" alt="Modify row"/>
+                    </span>
+                    <span data-method="DELETE" data-route="/news/delete/{{ newsEntry.id }}">
+                        <img class="btn btn-icon" src="/assets/images/close.svg" alt="Delete row"/>
+                    </span>
+                </div>
+            </div>
+
+        {% endfor %}
+    </div>
+{% endif %}

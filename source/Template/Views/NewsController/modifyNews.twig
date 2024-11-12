@@ -1,0 +1,15 @@
+{% include 'NewsController/Partials/newsList.twig' %}
+
+<div class="flex flex--center">
+    <h2 class="news-edit-title">
+        Edit news
+    </h2>
+
+    <div class="news-row-buttons">
+        <span data-route="/news">
+            <img class="btn btn-icon" src="/assets/images/close.svg" alt="Delete row"/>
+        </span>
+    </div>
+</div>
+
+{% include 'NewsController/Partials/newsForm.twig' %}
