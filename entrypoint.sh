@@ -6,15 +6,18 @@ if [ ! -d "/var/www/html/vendor" ] && [ -f "/var/www/html/composer.json" ]; then
     composer install --no-interaction --optimize-autoloader
 fi
 
-# Enable xdebug conditionally
-if [ "$XDEBUG_ENABLED" = "true" ]; then
-  cp /var/www/html/php/xdebug.ini /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
-else
-  rm -f /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
-fi
 
-# Rebuild the autoloader to ensure it's updated
-composer dump-autoload --optimize
+if [ "$DEVELOPMENT" = "true" ]; then
+  # Enable xdebug
+  cp /var/www/html/php/xdebug.ini /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+  # Rebuild the autoloader in dev mode
+  composer dump-autoload --optimize --dev
+else
+  # Disable xdebug
+  rm -f /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+  # Rebuild the autoloader in production mode
+  composer dump-autoload --optimize --no-dev
+fi
 
 # Run Apache in the foreground
 apache2-foreground
