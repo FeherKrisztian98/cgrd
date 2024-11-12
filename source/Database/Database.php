@@ -2,6 +2,7 @@
 
 namespace App\Database;
 
+use App\Service\Environment;
 use PDO;
 use PDOException;
 use PDOStatement;
@@ -26,10 +27,10 @@ final class Database
      */
     private function __construct()
     {
-        $host = getenv('DB_HOST');
-        $dbName = getenv('DB_NAME');
-        $username = getenv('DB_USER');
-        $password = getenv('DB_PASSWORD');
+        $host = Environment::get('DB_HOST');
+        $dbName = Environment::get('DB_NAME');
+        $username = Environment::get('DB_USER');
+        $password = Environment::get('DB_PASSWORD');
 
         if (!$host || !$dbName || !$username || !$password) {
             throw new PDOException('Database configuration is missing.');
