@@ -1,9 +1,9 @@
 <?php
 
-namespace Controller;
+namespace App\Controller;
 
-use HTTP\Request;
-use HTTP\Response;
+use App\HTTP\Request;
+use App\HTTP\Response;
 
 /**
  * Serves as a base controller class that provides common functionality

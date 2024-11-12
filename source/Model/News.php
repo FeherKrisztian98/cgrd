@@ -1,6 +1,6 @@
 <?php
 
-namespace Model;
+namespace App\Model;
 
 /** News model class representing a news article */
 class News extends AbstractModel

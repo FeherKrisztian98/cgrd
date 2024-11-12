@@ -1,9 +1,9 @@
 <?php
 
-namespace Middleware;
+namespace App\Middleware;
 
-use HTTP\Request;
-use HTTP\Response;
+use App\HTTP\Request;
+use App\HTTP\Response;
 
 /**
  * This interface defines a standard for middleware classes

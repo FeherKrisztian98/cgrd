@@ -1,8 +1,8 @@
 <?php
 
-namespace HTTP;
+namespace App\HTTP;
 
-use ENUM\NotificationType;
+use App\ENUM\NotificationType;
 use JsonSerializable;
 
 /**

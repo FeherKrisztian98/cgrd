@@ -1,10 +1,10 @@
 <?php
 
-namespace Middleware;
+namespace App\Middleware;
 
-use HTTP\Request;
-use HTTP\Response;
-use Service\Auth;
+use App\HTTP\Request;
+use App\HTTP\Response;
+use App\Service\Auth;
 
 /**
  * Middleware to check if a user is authenticated. If the user is not logged in, they will be redirected to a specified login page

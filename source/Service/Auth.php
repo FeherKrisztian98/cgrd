@@ -1,8 +1,8 @@
 <?php
 
-namespace Service;
+namespace App\Service;
 
-use Model\User;
+use App\Model\User;
 
 /**
  * Auth service class to handle user authentication and session management

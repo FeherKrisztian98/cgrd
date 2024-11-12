@@ -1,10 +1,10 @@
 <?php
 
-namespace HTTP;
+namespace App\HTTP;
 
-use ENUM\NotificationType;
+use App\ENUM\NotificationType;
+use App\Template\TemplateRenderer;
 use JsonException;
-use Template\TemplateRenderer;
 
 /**
  * Represents a HTTP response

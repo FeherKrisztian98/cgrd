@@ -1,9 +1,9 @@
 <?php
 
-namespace Controller;
+namespace App\Controller;
 
-use HTTP\Response;
-use Service\Auth;
+use App\HTTP\Response;
+use App\Service\Auth;
 
 /**
  * Handles the main application logic for the root endpoint

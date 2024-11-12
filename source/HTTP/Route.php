@@ -1,9 +1,9 @@
 <?php
 
-namespace HTTP;
+namespace App\HTTP;
 
+use App\Middleware\MiddlewareInterface;
 use BadMethodCallException;
-use Middleware\MiddlewareInterface;
 
 /**
  * Represents a route in the application, mapping a controller and an action to handle HTTP requests

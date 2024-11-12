@@ -1,9 +1,9 @@
 <?php
 
-namespace Controller;
+namespace App\Controller;
 
-use HTTP\Response;
-use Model\News;
+use App\HTTP\Response;
+use App\Model\News;
 
 /**
  * Handles the news management functionality

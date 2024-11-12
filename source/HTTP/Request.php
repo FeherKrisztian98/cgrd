@@ -1,6 +1,6 @@
 <?php
 
-namespace HTTP;
+namespace App\HTTP;
 
 /** Represents a HTTP request */
 class Request

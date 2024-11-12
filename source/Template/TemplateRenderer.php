@@ -1,6 +1,6 @@
 <?php
 
-namespace Template;
+namespace App\Template;
 
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;

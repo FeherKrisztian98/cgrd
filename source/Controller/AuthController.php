@@ -1,10 +1,10 @@
 <?php
 
-namespace Controller;
+namespace App\Controller;
 
-use ENUM\NotificationType;
-use HTTP\Response;
-use Service\Auth;
+use App\ENUM\NotificationType;
+use App\HTTP\Response;
+use App\Service\Auth;
 
 /**
  * Handles user authentication processes, including login, authentication checks, and logout

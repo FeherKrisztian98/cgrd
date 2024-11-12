@@ -1,13 +1,13 @@
 <?php
 
-namespace HTTP;
+namespace App\HTTP;
 
-use Controller\AppController;
-use Controller\AuthController;
-use Controller\NewsController;
-use Middleware\AuthMiddleware;
-use Middleware\CsrfMiddleware;
-use Middleware\MiddlewareInterface;
+use App\Controller\AppController;
+use App\Controller\AuthController;
+use App\Controller\NewsController;
+use App\Middleware\AuthMiddleware;
+use App\Middleware\CsrfMiddleware;
+use App\Middleware\MiddlewareInterface;
 
 /**
  * Manages the registration and dispatching of routes, including middleware processing

@@ -1,8 +1,8 @@
 <?php
 
-namespace Model;
+namespace App\Model;
 
-use Database\Database;
+use App\Database\Database;
 
 /** User model class representing a user in the system */
 class User extends AbstractModel

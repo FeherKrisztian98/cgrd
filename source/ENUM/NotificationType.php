@@ -1,6 +1,6 @@
 <?php
 
-namespace ENUM;
+namespace App\ENUM;
 
 /**
  *  Represents the types of notifications that can be displayed in the application.
