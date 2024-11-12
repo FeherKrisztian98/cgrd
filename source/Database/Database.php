@@ -90,4 +90,24 @@ final class Database
     {
         return $this->pdo->lastInsertId();
     }
+
+    /**
+     * Start a transaction
+     *
+     * @return void
+     */
+    public function startTransaction(): void
+    {
+        $this->pdo->beginTransaction();
+    }
+
+    /**
+     * Roll back the transaction in progress
+     *
+     * @return void
+     */
+    public function rollBack(): void
+    {
+        $this->pdo->rollBack();
+    }
 }
