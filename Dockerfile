@@ -19,9 +19,8 @@ RUN pecl install xdebug \
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Set the working directory and permissions
+# Set the working directory
 WORKDIR /var/www/html
-RUN chown -R www-data:www-data /var/www/html
 
 # Setup Apache configuration
 COPY ./apache/cgrd.conf /etc/apache2/sites-available/cgrd.conf
