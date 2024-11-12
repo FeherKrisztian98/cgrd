@@ -28,7 +28,7 @@ class Environment
      */
     public static function isDevelopment(): bool
     {
-        return true;
+        return self::get('DEVELOPMENT') === 'true';
     }
 
     /**
