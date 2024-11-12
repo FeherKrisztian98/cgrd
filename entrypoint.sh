@@ -1,5 +1,7 @@
 #!/bin/bash
 
+chown -R :www-data /var/www/html
+
 # Check if vendor directory is missing and composer.json exists
 if [ ! -d "/var/www/html/vendor" ] && [ -f "/var/www/html/composer.json" ]; then
     # Install dependencies
