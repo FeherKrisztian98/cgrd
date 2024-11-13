@@ -10,13 +10,23 @@ use App\Tests\TestCase;
  */
 class NewsUnitTest extends TestCase
 {
-    public function testNewsModelCanBeInstantiated()
+    /**
+     * Test for the constructor
+     *
+     * @return void
+     */
+    public function testNewsModelCanBeInstantiated(): void
     {
         $news = new News();
         assert($news instanceof News, 'Failed to instantiate News model');
     }
 
-    public function testFromArray()
+    /**
+     * Test for creating from array
+     *
+     * @return void
+     */
+    public function testFromArray(): void
     {
         $news = News::fromArray([
             'title' => 'Test News',
