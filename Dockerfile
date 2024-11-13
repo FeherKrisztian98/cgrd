@@ -27,9 +27,6 @@ COPY ./apache/cgrd.conf /etc/apache2/sites-available/cgrd.conf
 RUN a2ensite cgrd.conf
 RUN a2enmod rewrite
 
-# Setup initial database schema and data
-COPY mysql/migrations/migration_0.sql /docker-entrypoint-initdb.d/
-
 # Copy Composer files
 COPY composer.json composer.lock* ./
 
